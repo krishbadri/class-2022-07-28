@@ -1,0 +1,19 @@
+---
+title: "class-07-28"
+output: html_document
+date: "2022-07-29"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(primer.data)
+library(tidyverse)
+```
+```{r, warning=FALSE}
+nhanes |> filter(age>=18) |> 
+  select(weight, height) |> 
+  ggplot(mapping=aes(x=height, y=weight)) + geom_point() + labs(title="Heights and Weights of US Adults", subtitle="Krish Badri", x="Height", y="Weight", caption="National Survey")
+  # keep only adults
+  # keep only 2 variables, height and weight
+```
+
